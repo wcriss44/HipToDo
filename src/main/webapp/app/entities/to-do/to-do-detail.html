@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="hipToDoApp.toDo.detail.title">To Do</span> {{vm.toDo.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="hipToDoApp.toDo.toDoItem">To Do Item</span></dt>
+        <dd>
+            <span>{{vm.toDo.toDoItem}}</span>
+        </dd>
+        <dt><span data-translate="hipToDoApp.toDo.datePosted">Date Posted</span></dt>
+        <dd>
+            <span>{{vm.toDo.datePosted | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="hipToDoApp.toDo.isComplete">Is Complete</span></dt>
+        <dd>
+            <span>{{vm.toDo.isComplete}}</span>
+        </dd>
+        <dt><span data-translate="hipToDoApp.toDo.owner">Owner</span></dt>
+        <dd>
+            <a ui-sref="owner-detail({id:vm.toDo.owner.id})">{{vm.toDo.owner.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="to-do-detail.edit({id:vm.toDo.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

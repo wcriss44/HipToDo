@@ -1,0 +1,24 @@
+{
+    "hipToDoApp": {
+        "toDo" : {
+            "home": {
+                "title": "ToDos",
+                "createLabel": "Crear novo To Do",
+                "createOrEditLabel": "Crear ou editar To Do"
+            },
+            "created": "Un novo To Do foi creado co identificador {{ param }}",
+            "updated": "Un To Do foi actualizado co identificador {{ param }}",
+            "deleted": "Un To Do foi eliminado co identificador {{ param }}",
+            "delete": {
+                "question": "Seguro que desexa eliminar To Do {{ id }}?"
+            },
+            "detail": {
+                "title": "To Do"
+            },
+            "toDoItem": "To Do Item",
+            "datePosted": "Date Posted",
+            "isComplete": "Is Complete",
+            "owner": "Owner"
+        }
+    }
+}

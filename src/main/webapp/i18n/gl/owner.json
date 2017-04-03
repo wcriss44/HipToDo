@@ -1,0 +1,24 @@
+{
+    "hipToDoApp": {
+        "owner" : {
+            "home": {
+                "title": "Owners",
+                "createLabel": "Crear novo Owner",
+                "createOrEditLabel": "Crear ou editar Owner"
+            },
+            "created": "Un novo Owner foi creado co identificador {{ param }}",
+            "updated": "Un Owner foi actualizado co identificador {{ param }}",
+            "deleted": "Un Owner foi eliminado co identificador {{ param }}",
+            "delete": {
+                "question": "Seguro que desexa eliminar Owner {{ id }}?"
+            },
+            "detail": {
+                "title": "Owner"
+            },
+            "name": "Name",
+            "serviceBranch": "Service Branch",
+            "companyName": "Company Name",
+            "toDo": "To Do"
+        }
+    }
+}

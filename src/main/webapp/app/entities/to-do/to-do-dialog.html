@@ -1,0 +1,71 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myToDoLabel" data-translate="hipToDoApp.toDo.home.createOrEditLabel">Create or edit a To Do</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.toDo.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.toDo.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hipToDoApp.toDo.toDoItem" for="field_toDoItem">To Do Item</label>
+            <input type="text" class="form-control" name="toDoItem" id="field_toDoItem"
+                    ng-model="vm.toDo.toDoItem"
+                    required/>
+            <div ng-show="editForm.toDoItem.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.toDoItem.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hipToDoApp.toDo.datePosted" for="field_datePosted">Date Posted</label>
+                <div class="input-group">
+                    <input id="field_datePosted" type="text" class="form-control" name="datePosted" uib-datepicker-popup="{{dateformat}}" ng-model="vm.toDo.datePosted" is-open="vm.datePickerOpenStatus.datePosted"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('datePosted')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.datePosted.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.datePosted.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="hipToDoApp.toDo.isComplete" for="field_isComplete">Is Complete</label>
+                <input type="checkbox" name="isComplete" id="field_isComplete"
+                          ng-model="vm.toDo.isComplete"/>
+            <div ng-show="editForm.isComplete.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.isComplete.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label data-translate="hipToDoApp.toDo.owner" for="field_owner">Owner</label>
+            <select class="form-control" id="field_owner" name="owner" ng-model="vm.toDo.owner" ng-options="owner as owner.id for owner in vm.owners track by owner.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

@@ -1,0 +1,19 @@
+{
+    "home": {
+        "title": "This site is COOL beans",
+        "subtitle": "not really",
+        "logged": {
+            "message": "You are logged in as user \"{{username}}\"."
+        },
+        "question": "If you have any question on JHipster:",
+        "link": {
+            "homepage": "HipToDo ---page",
+            "stackoverflow": "Stuff for stack",
+            "bugtracker": "bugs for this",
+            "chat": "some kind of chat",
+            "follow": "the twitter thing"
+        },
+        "like": "this is for stars",
+        "github": "GitHub"
+    }
+}
